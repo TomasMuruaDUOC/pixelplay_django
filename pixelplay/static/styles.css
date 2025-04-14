@@ -1,0 +1,803 @@
+/* General */
+body {
+  background-color: #121212;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para el header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+/* Estilos para los íconos del header */
+.icon-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon-link:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.icon-link i {
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar {
+  background-color: #202020;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #fff;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand:hover {
+  opacity: 0.8;
+}
+
+.navbar-brand img {
+  background-color: transparent;
+  padding: 0;
+  border: no ne;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #fff !important;
+}
+
+/* Contenedor del botón de registro */
+.registro-container {
+  margin-left: auto;
+}
+
+/* Estilo mejorado del botón Crear Perfil */
+.btn-registro {
+  background: linear-gradient(135deg, #ff6600, #ff4500);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-registro:hover {
+  background: linear-gradient(135deg, #ff4500, #ff2200);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0070f3, #00a6ff);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0060d3, #0096ef);
+  transform: translateY(-1px);
+}
+
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo especial para el contenedor del formulario de registro */
+.registro-card {
+  background-color: rgba(
+    50,
+    50,
+    50,
+    0.85
+  ); /* Gris oscuro semitransparente para mejor contraste */
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Estilos para inputs y etiquetas en la tarjeta de registro */
+.registro-card .form-control {
+  background-color: #3a3a3a !important; /* Fondo gris oscuro */
+  color: #ffffff !important; /* Texto blanco */
+  border: 1px solid #777 !important; /* Borde con buen contraste */
+}
+
+.registro-card .form-control::placeholder {
+  color: #ddd !important; /* Placeholder visible */
+}
+
+.registro-card .form-label {
+  color: #ffffff !important; /* Etiquetas en blanco */
+}
+
+.registro-card .invalid-feedback {
+  color: #ffcccb;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+#formLogin .form-control {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+  border: 1px solid #777 !important;
+}
+
+#formLogin .form-control::placeholder {
+  color: #aaa !important;
+}
+
+#formLogin .form-label {
+  color: #ffffff !important;
+}
+
+#formLogin .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para el formulario de recuperación de contraseña */
+#formRecuperar .form-control {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+  border: 1px solid #777 !important;
+}
+
+#formRecuperar .form-control::placeholder {
+  color: #aaa !important;
+}
+
+#formRecuperar .form-label {
+  color: #ffffff !important;
+}
+
+/* Estilos para el formulario de modificación */
+#formModificar .form-control {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+  border: 1px solid #777 !important;
+}
+
+#formModificar .form-control::placeholder {
+  color: #aaa !important;
+}
+
+#formModificar .form-label {
+  color: #ffffff !important;
+}
+
+#formModificar .form-check-label {
+  color: #ffffff;
+}
+
+#formModificar .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.alert-info {
+  background-color: rgba(13, 202, 240, 0.1);
+  border-color: rgba(13, 202, 240, 0.2);
+  color: #0dcaf0;
+}
+
+/* Estilos mejorados para el formulario */
+.card-body {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-control:focus {
+  background-color: #4a4a4a !important;
+  border-color: #0070f3 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 112, 243, 0.25) !important;
+}
+
+.btn {
+  min-width: 120px;
+}
+
+/* Contenedor del botón de registro */
+.registro-container {
+  margin-left: auto;
+}
+
+/* Estilo mejorado del botón Crear Perfil */
+.btn-registro {
+  background: linear-gradient(135deg, #ff6600, #ff4500);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-registro:hover {
+  background: linear-gradient(135deg, #ff4500, #ff2200);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Contenido principal */
+main {
+  max-width: 1800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../static/imagenes/hero-pattern.png") repeat;
+  opacity: 0.1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 0;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #007bff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.categoria {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  min-height: 300px;
+  text-align: center;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.categoria img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.categoria p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.categoria:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.categoria a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  display: block;
+  margin-top: 10px;
+}
+
+.categoria a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.categoria a:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Category Cards */
+.categoria-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.categoria-card.hover-effect:hover {
+  transform: translateY(-10px);
+}
+
+.categoria-card .card {
+  background: transparent;
+}
+
+.categoria-img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+  transition: transform 0.3s ease;
+}
+
+.categoria-card:hover .categoria-img {
+  transform: scale(1.05);
+}
+
+.categoria-card .card-body {
+  background: rgba(33, 37, 41, 0.95);
+  padding: 1.5rem;
+}
+
+.categoria-card .card-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.categoria-card .card-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.categoria-card:hover .card-body {
+  background: rgba(33, 37, 41, 1);
+}
+
+/* Detalle de juegos */
+.detalle-juego {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.detalle-juego img {
+  width: 50%;
+  border-radius: 8px;
+}
+
+/* Featured Games Carousel */
+.featured-game {
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.featured-game:hover {
+  transform: scale(1.02);
+}
+
+.featured-game img {
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding: 2rem;
+  transition: background 0.3s ease;
+}
+
+.featured-game:hover .featured-overlay {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.featured-game .btn {
+  opacity: 0.9;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.featured-game:hover .btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-item a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.carousel-item a:hover {
+  text-decoration: none;
+}
+
+.descripcion {
+  padding: 20px;
+  width: 50%;
+}
+
+.descripcion h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.descripcion p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.precio {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 25px;
+}
+
+.btn-carrito {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-carrito:hover {
+  background-color: #555;
+}
+
+/* Juegos */
+.juego {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px auto;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.juego:hover {
+  transform: translateY(-5px);
+}
+
+.juego img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.juego h2 {
+  color: #333;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.juego p.precio {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Descripción de categoría */
+.descripcion-categoria {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Pie de página */
+footer {
+  background-color: #202020;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Carrusel */
+.carousel-item {
+  transition: opacity 0.7s ease-in-out !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block !important;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-item.active {
+  position: relative;
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel .featured-game {
+  position: relative;
+  height: 600px;
+}
+
+.carousel .featured-game img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.featured-overlay {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding: 2rem;
+}
+
+/* Carrusel: Usar fade nativo de Bootstrap */
+.carousel.slide.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+.carousel.slide.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+/* Card background dark */
+.card.bg-dark {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  height: 100%;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-text {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  min-height: 2rem;
+}
+
+.bi-gear-fill {
+  font-size: 1.2rem;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.feature-card i {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover i {
+  transform: scale(1.1);
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+.carousel-indicators {
+  bottom: 2rem;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 0;
+  }
+
+  .featured-game img {
+    height: 300px;
+  }
+
+  .categoria-img {
+    height: 200px;
+  }
+}
+
+/* Features Section */
+.features-section {
+  padding: 4rem 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+}
+
+.feature-item {
+  padding: 2rem;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  height: 100%;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-icon {
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon i {
+  font-size: 3rem;
+  color: #007bff;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon i {
+  transform: scale(1.1);
+}
+
+.feature-content h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.feature-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}

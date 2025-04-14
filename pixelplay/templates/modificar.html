@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Modificar Usuario -
+PixelPlay{% endblock %} {% block content %}
+<main class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div
+        class="card bg-dark text-white border border-light border-opacity-25"
+      >
+        <div class="card-body p-4">
+          <h1 class="card-title text-center mb-4">Modificar Usuario</h1>
+          <p class="text-center text-white-50 mb-4">
+            Si no deseas modificar un dato debes ingresar el que ya estaba
+            registrado.
+          </p>
+
+          <form id="formModificar" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Modificar Nombre *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                placeholder="Tu nombre"
+                required
+              />
+              <div class="invalid-feedback">Por favor ingrese su nombre.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="usuario" class="form-label"
+                >Modificar Usuario *</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="usuario"
+                placeholder="Nombre de usuario"
+                required
+              />
+              <div class="invalid-feedback">
+                Por favor ingrese un nombre de usuario.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label"
+                >Modificar Correo Electrónico *</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="tucorreo@ejemplo.com"
+                required
+              />
+              <div class="invalid-feedback">
+                Por favor ingrese un correo válido.
+              </div>
+            </div>
+
+            <div class="form-check mb-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="terminos"
+                required
+              />
+              <label class="form-check-label" for="terminos">
+                Acepto los términos y condiciones
+              </label>
+              <div class="invalid-feedback">
+                Debe aceptar los términos y condiciones.
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">
+                Guardar Cambios
+              </button>
+              <button type="reset" class="btn btn-outline-light">
+                Limpiar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

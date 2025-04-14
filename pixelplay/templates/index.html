@@ -1,0 +1,257 @@
+{% extends 'base.html' %} {% load static %} {% block title %}PixelPlay - Tu
+Destino Gaming{% endblock %} {% block content %} {% if messages %}
+<div class="messages mb-4">
+  {% for message in messages %}
+  <div
+    class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show"
+    role="alert"
+  >
+    {{ message }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- Hero Section Mejorada -->
+<div class="hero-section position-relative mb-5 py-5 text-center text-white">
+  <div class="position-relative z-1">
+    <h1 class="display-3 fw-bold mb-4 text-gradient">Bienvenido a PixelPlay</h1>
+    <p class="lead mb-4 fw-light">
+      Tu destino definitivo para los mejores videojuegos. Explora mundos nuevos,
+      vive aventuras épicas y únete a una comunidad apasionada de gamers.
+    </p>
+    {% if not user.is_authenticated %}
+    <div class="d-flex justify-content-center gap-3">
+      <a href="{% url 'registro' %}" class="btn btn-primary btn-lg">
+        <i class="fas fa-user-plus"></i> Únete Ahora
+      </a>
+      <a href="{% url 'inicio_sesion' %}" class="btn btn-outline-light btn-lg">
+        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+      </a>
+    </div>
+    {% endif %}
+  </div>
+  <div class="hero-overlay"></div>
+</div>
+
+<!-- Carousel de Juegos Destacados -->
+<div class="featured-section mb-5">
+  <h2 class="display-6 text-white text-center mb-4">Juegos Destacados</h2>
+  <div class="row g-4">
+    <div class="col-12">
+      <div
+        id="featuredGames"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#featuredGames"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#featuredGames"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#featuredGames"
+            data-bs-slide-to="2"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="{% url 'accion' %}" class="text-decoration-none">
+              <div class="featured-game position-relative">
+                <img
+                  src="{% static 'imagenes/accion/cyberpunk.jpg' %}"
+                  alt="Cyberpunk 2077"
+                  class="w-100 rounded-4"
+                />
+                <div class="featured-overlay p-4">
+                  <h2 class="display-6 text-white">Cyberpunk 2077</h2>
+                  <p class="lead text-white-50">Explora Night City</p>
+                  <button class="btn btn-primary">Ver Más</button>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'aventura' %}" class="text-decoration-none">
+              <div class="featured-game position-relative">
+                <img
+                  src="{% static 'imagenes/aventura/zelda.jpg' %}"
+                  alt="Zelda"
+                  class="w-100 rounded-4"
+                />
+                <div class="featured-overlay p-4">
+                  <h2 class="display-6 text-white">The Legend of Zelda</h2>
+                  <p class="lead text-white-50">Una aventura épica te espera</p>
+                  <button class="btn btn-primary">Ver Más</button>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'retro' %}" class="text-decoration-none">
+              <div class="featured-game position-relative">
+                <img
+                  src="{% static 'imagenes/retro_games/pacman.jpg' %}"
+                  alt="Pacman"
+                  class="w-100 rounded-4"
+                />
+                <div class="featured-overlay p-4">
+                  <h2 class="display-6 text-white">Pac-Man</h2>
+                  <p class="lead text-white-50">Revive los clásicos</p>
+                  <button class="btn btn-primary">Ver Más</button>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#featuredGames"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#featuredGames"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Categorías de Juegos -->
+<div class="categories-section mb-5">
+  <h2 class="display-6 text-white text-center mb-4">Explora por Categoría</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="categoria-card hover-effect">
+        <a href="{% url 'accion' %}" class="text-decoration-none">
+          <div class="card bg-dark text-white border-0">
+            <img
+              src="{% static 'imagenes/accion/cyberpunk.jpg' %}"
+              alt="Acción"
+              class="card-img categoria-img"
+            />
+            <div class="card-body text-center">
+              <h3 class="card-title h4 mb-2">Acción</h3>
+              <p class="card-text text-white-50">
+                Adrenalina pura en cada momento
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="categoria-card hover-effect">
+        <a href="{% url 'aventura' %}" class="text-decoration-none">
+          <div class="card bg-dark text-white border-0">
+            <img
+              src="{% static 'imagenes/aventura/zelda.jpg' %}"
+              alt="Aventura"
+              class="card-img categoria-img"
+            />
+            <div class="card-body text-center">
+              <h3 class="card-title h4 mb-2">Aventura</h3>
+              <p class="card-text text-white-50">Explora mundos fascinantes</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="categoria-card hover-effect">
+        <a href="{% url 'retro' %}" class="text-decoration-none">
+          <div class="card bg-dark text-white border-0">
+            <img
+              src="{% static 'imagenes/retro_games/pacman.jpg' %}"
+              alt="Retro Games"
+              class="card-img categoria-img"
+            />
+            <div class="card-body text-center">
+              <h3 class="card-title h4 mb-2">Retro Games</h3>
+              <p class="card-text text-white-50">
+                Revive los clásicos de siempre
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ¿Por qué elegir PixelPlay? -->
+<div class="features-section py-5">
+  <h2 class="display-5 text-white text-center mb-5">
+    ¿Por qué elegir PixelPlay?
+  </h2>
+  <div class="row g-4 text-center">
+    <div class="col-md-4">
+      <div class="feature-item">
+        <div class="feature-icon mb-4">
+          <i class="fas fa-gamepad fa-3x text-primary"></i>
+        </div>
+        <div class="feature-content">
+          <h3 class="h4 text-white mb-3">Gran Catálogo</h3>
+          <p class="text-white-50">
+            Miles de juegos para todas las plataformas y gustos.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-item">
+        <div class="feature-icon mb-4">
+          <i class="fas fa-shield-alt fa-3x text-primary"></i>
+        </div>
+        <div class="feature-content">
+          <h3 class="h4 text-white mb-3">Compra Segura</h3>
+          <p class="text-white-50">
+            Transacciones seguras y protección de datos garantizada.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-item">
+        <div class="feature-icon mb-4">
+          <i class="fas fa-headset fa-3x text-primary"></i>
+        </div>
+        <div class="feature-content">
+          <h3 class="h4 text-white mb-3">Soporte 24/7</h3>
+          <p class="text-white-50">
+            Atención al cliente disponible cuando la necesites.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_scripts %}
+<script src="{% static 'carousel.js' %}"></script>
+{% endblock %}

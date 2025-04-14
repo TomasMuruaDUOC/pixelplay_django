@@ -1,0 +1,126 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Registro -
+PixelPlay{% endblock %} {% block content %}
+<main class="container mt-4">
+  <div
+    class="card bg-dark text-white shadow-lg border border-light border-opacity-25"
+  >
+    <div class="card-body p-4">
+      <h1 class="card-title text-center mb-5">Registro en PixelPlay</h1>
+
+      {% if messages %}
+      <div class="messages mb-4">
+        {% for message in messages %}
+        <div
+          class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show"
+          role="alert"
+        >
+          {{ message }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        <div class="row g-4">
+          <!-- Username y Email -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="{{ form.username.id_for_label }}" class="form-label"
+                >Nombre de Usuario *</label
+              >
+              {{ form.username }} {% if form.username.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.username.errors.0 }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="{{ form.email.id_for_label }}" class="form-label"
+                >Correo Electrónico *</label
+              >
+              {{ form.email }} {% if form.email.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.email.errors.0 }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Contraseñas -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="{{ form.password1.id_for_label }}" class="form-label"
+                >Contraseña *</label
+              >
+              {{ form.password1 }} {% if form.password1.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.password1.errors.0 }}
+              </div>
+              {% endif %}
+              <div class="form-text text-white-50">
+                La contraseña debe tener al menos 6 caracteres, una mayúscula y
+                un número.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="{{ form.password2.id_for_label }}" class="form-label"
+                >Confirmar Contraseña *</label
+              >
+              {{ form.password2 }} {% if form.password2.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.password2.errors.0 }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Fecha de Nacimiento y Dirección -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label
+                for="{{ form.fecha_nacimiento.id_for_label }}"
+                class="form-label"
+                >Fecha de Nacimiento *</label
+              >
+              {{ form.fecha_nacimiento }} {% if form.fecha_nacimiento.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.fecha_nacimiento.errors.0 }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="{{ form.direccion.id_for_label }}" class="form-label"
+                >Dirección</label
+              >
+              {{ form.direccion }} {% if form.direccion.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.direccion.errors.0 }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <button type="submit" class="btn btn-primary px-4">Registrar</button>
+          <button type="reset" class="btn btn-secondary px-4">Limpiar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

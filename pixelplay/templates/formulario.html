@@ -1,0 +1,129 @@
+{% extends 'base.html' %} {% block title %}Formulario de Contacto - PixelPlay{%
+endblock %} {% block content %}
+<!-- Contenedor del Formulario -->
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Formulario de Registro</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card p-4">
+        <h3 class="card-title text-center">Envíanos un mensaje</h3>
+
+        <form id="contactForm">
+          <!-- Nombre Completo (Obligatorio) -->
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre *</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Tu nombre"
+              autocomplete="name"
+            />
+            <div class="error-message text-danger"></div>
+          </div>
+
+          <!-- Nombre de usuario (Obligatorio) -->
+          <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario *</label>
+            <input
+              type="text"
+              class="form-control"
+              id="usuario"
+              placeholder="Nombre de usuario"
+              autocomplete="username"
+            />
+            <div class="error-message text-danger"></div>
+          </div>
+
+          <!-- Campo Email (Obligatorio) -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico *</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="tucorreo@ejemplo.com"
+              autocomplete="email"
+            />
+            <div class="error-message text-danger"></div>
+          </div>
+
+          <!-- Clave de Ingreso -->
+          <div class="mb-3">
+            <label for="clave" class="form-label">Clave de Ingreso</label>
+            <input
+              type="text"
+              class="form-control"
+              id="clave"
+              placeholder="clave de Ingreso"
+              autocomplete="clave"
+            />
+            <div class="error-message text-danger"></div>
+          </div>
+
+          <!-- Repetir clave de ingreso -->
+          <div class="mb-3">
+            <label for="clave2" class="form-label"
+              >Repetir clave de ingreso</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="clave2"
+              placeholder="clave de Ingreso"
+              autocomplete="clave"
+            />
+            <div class="error-message text-danger"></div>
+          </div>
+
+          <!-- Fecha de Nacimiento -->
+          <div class="mb-3">
+            <label for="fecha_nacimiento" class="form-label"
+              >Fecha de Nacimiento</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="fecha_nacimiento"
+              name="fecha_nacimiento"
+              autocomplete="bday"
+            />
+            <div class="error-message text-danger"></div>
+          </div>
+
+          <!-- Dirección de Despacho -->
+          <div class="mb-3">
+            <label for="direccion" class="form-label"
+              >Dirección de Despacho</label
+            >
+            <textarea
+              class="form-control"
+              id="direccion"
+              rows="3"
+              placeholder="Escribe tu dirección"
+            ></textarea>
+          </div>
+
+          <!-- Checkbox de Aceptación -->
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="terminos" />
+            <label class="form-check-label" for="terminos"
+              >Acepto los términos y condiciones</label
+            >
+            <div class="error-message text-danger"></div>
+          </div>
+
+          <!-- Botón de Envío -->
+          <button type="submit" class="btn btn-primary w-100">Enviar</button>
+
+          <!-- Botón para Limpiar -->
+          <button type="reset" class="btn btn-secondary w-100 mt-2">
+            Limpiar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
