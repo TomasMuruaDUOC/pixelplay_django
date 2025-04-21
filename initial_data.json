@@ -1,0 +1,194 @@
+[
+  {
+    "model": "pixelplay.juego",
+    "pk": 1,
+    "fields": {
+      "nombre": "GTA VI",
+      "descripcion": "El nuevo GTA ambientado en Vice City",
+      "precio": "69990.00",
+      "imagen": "imagenes/accion/gta6.jpg",
+      "categoria": "accion",
+      "fecha_agregado": "2025-04-14T00:18:37.807Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 2,
+    "fields": {
+      "nombre": "Cyberpunk 2077",
+      "descripcion": "Aventura futurista en Night City",
+      "precio": "49990.00",
+      "imagen": "imagenes/accion/cyberpunk.jpg",
+      "categoria": "accion",
+      "fecha_agregado": "2025-04-14T00:18:37.828Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 3,
+    "fields": {
+      "nombre": "The Last of Us",
+      "descripcion": "Sobrevive en un mundo post-apocalíptico",
+      "precio": "54990.00",
+      "imagen": "imagenes/aventura/the_last_of_us.jpeg",
+      "categoria": "aventura",
+      "fecha_agregado": "2025-04-14T00:18:37.835Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 4,
+    "fields": {
+      "nombre": "The Legend of Zelda",
+      "descripcion": "Explora el vasto reino de Hyrule",
+      "precio": "59990.00",
+      "imagen": "imagenes/aventura/zelda.jpg",
+      "categoria": "aventura",
+      "fecha_agregado": "2025-04-14T00:18:37.839Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 5,
+    "fields": {
+      "nombre": "NBA 2K25",
+      "descripcion": "La mejor experiencia de baloncesto",
+      "precio": "64990.00",
+      "imagen": "imagenes/deportes/nba2k25.jpeg",
+      "categoria": "deportes",
+      "fecha_agregado": "2025-04-14T00:18:37.848Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 6,
+    "fields": {
+      "nombre": "EA Sports FC 25",
+      "descripcion": "El nuevo juego de fútbol de EA",
+      "precio": "69990.00",
+      "imagen": "imagenes/deportes/ea_fc_25.jpeg",
+      "categoria": "deportes",
+      "fecha_agregado": "2025-04-14T00:18:37.852Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 7,
+    "fields": {
+      "nombre": "Civilization VI",
+      "descripcion": "Construye tu imperio a través de la historia",
+      "precio": "45990.00",
+      "imagen": "imagenes/estrategia/civilization_6.jpeg",
+      "categoria": "estrategia",
+      "fecha_agregado": "2025-04-14T00:18:37.858Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 8,
+    "fields": {
+      "nombre": "Age of Empires",
+      "descripcion": "El clásico juego de estrategia en tiempo real",
+      "precio": "39990.00",
+      "imagen": "imagenes/estrategia/age_of_empire.jpeg",
+      "categoria": "estrategia",
+      "fecha_agregado": "2025-04-14T00:18:37.862Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 9,
+    "fields": {
+      "nombre": "Super Mario Bros",
+      "descripcion": "El clásico juego de plataformas",
+      "precio": "19990.00",
+      "imagen": "imagenes/retro_games/super_mario_bros.jpeg",
+      "categoria": "retro",
+      "fecha_agregado": "2025-04-14T00:18:37.867Z"
+    }
+  },
+  {
+    "model": "pixelplay.juego",
+    "pk": 10,
+    "fields": {
+      "nombre": "Pac-Man",
+      "descripcion": "El famoso comecocos",
+      "precio": "14990.00",
+      "imagen": "imagenes/retro_games/pacman.jpg",
+      "categoria": "retro",
+      "fecha_agregado": "2025-04-14T00:18:37.871Z"
+    }
+  },
+  {
+    "model": "pixelplay.usuario",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$8p1uyH6Sm6h6ZLZjMa7Teb$fTBA7d347l1gzdECAIgGbS5XfT7WKK8D1Btl6nij2m4=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin@pixelplay.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-04-14T03:26:24.614Z",
+      "rol": "admin",
+      "fecha_nacimiento": "1990-01-01",
+      "direccion": "Calle Principal 123",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "pixelplay.usuario",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$pcncNwVWSBM0A4PMacS0Te$HgoiI+TwjXGxhflaX8d1yCCL4HyuJ2vH3pTB4NylMpI=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "cliente",
+      "first_name": "Cliente",
+      "last_name": "Demo",
+      "email": "cliente@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-04-14T04:03:27.162Z",
+      "rol": "cliente",
+      "fecha_nacimiento": "1995-05-15",
+      "direccion": "Avenida Secundaria 456",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "pixelplay.carritocompra",
+    "pk": 1,
+    "fields": {
+      "usuario": 2,
+      "juego": 1,
+      "cantidad": 1,
+      "fecha_agregado": "2025-04-14T04:22:10.117Z"
+    }
+  },
+  {
+    "model": "pixelplay.carritocompra",
+    "pk": 2,
+    "fields": {
+      "usuario": 2,
+      "juego": 3,
+      "cantidad": 1,
+      "fecha_agregado": "2025-04-14T04:22:10.117Z"
+    }
+  },
+  {
+    "model": "pixelplay.carritocompra",
+    "pk": 3,
+    "fields": {
+      "usuario": 2,
+      "juego": 9,
+      "cantidad": 2,
+      "fecha_agregado": "2025-04-14T04:22:10.117Z"
+    }
+  }
+]

@@ -62,6 +62,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'deportes' %}">Deportes</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'noticias' %}">Noticias</a>
+            </li>
           </ul>
           <div class="d-flex gap-3 align-items-center">
             {% if user.is_authenticated %}
@@ -80,30 +83,57 @@
                 aria-labelledby="userDropdown"
               >
                 <li>
-                  <a class="dropdown-item" href="{% url 'perfil_usuario' %}"
-                    >Mi Perfil</a
-                  >
+                  <a class="dropdown-item" href="{% url 'perfil_usuario' %}">
+                    <i class="fas fa-user me-2"></i>Mi Perfil
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'editar_perfil' %}">
+                    <i class="fas fa-user-edit me-2"></i>Editar Perfil
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'carrito_compra' %}">
+                    <i class="fas fa-shopping-cart me-2"></i>Mi Carrito
+                  </a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="{% url 'cerrar_sesion' %}"
-                    >Cerrar Sesión</a
+                  <a
+                    class="dropdown-item text-danger"
+                    href="{% url 'eliminar_usuario' %}"
                   >
+                    <i class="fas fa-user-times me-2"></i>Eliminar Cuenta
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'cerrar_sesion' %}">
+                    <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                  </a>
                 </li>
               </ul>
             </div>
             {% else %}
-            <a href="{% url 'inicio_sesion' %}" class="btn btn-primary"
-              >Iniciar Sesión</a
-            >
+            <a href="{% url 'inicio_sesion' %}" class="btn btn-primary">
+              <i class="fas fa-sign-in-alt me-2"></i>Iniciar Sesión
+            </a>
             {% endif %} {% if user.is_authenticated and user.rol == 'admin' %}
-            <a href="{% url 'modificar' %}" class="icon-link"
-              ><i class="bi bi-gear-fill"></i
-            ></a>
+            <a
+              href="{% url 'admin_juegos_list' %}"
+              class="icon-link"
+              title="Administración"
+            >
+              <i class="bi bi-gear-fill"></i>
+            </a>
             {% endif %}
-            <a href="{% url 'carrito_compra' %}" class="icon-link"
-              ><i class="bi bi-cart-fill"></i
-            ></a>
+            <a
+              href="{% url 'carrito_compra' %}"
+              class="icon-link"
+              title="Carrito"
+            >
+              <i class="bi bi-cart-fill"></i>
+            </a>
           </div>
         </div>
       </div>

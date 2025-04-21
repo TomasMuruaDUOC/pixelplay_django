@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% load static %} {% load humanize %} {% block title
+%} Administración de Juegos - PixelPlay {% endblock %} {% block content %}
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-white">Administración de Juegos</h1>
+    <a href="{% url 'juego_create' %}" class="btn btn-primary">
+      <i class="bi bi-plus-lg"></i> Nuevo Juego
+    </a>
+  </div>
+
+  {% if messages %}
+  <div class="messages mb-4">
+    {% for message in messages %}
+    <div
+      class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show"
+      role="alert"
+    >
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="card bg-dark text-white">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for juego in juegos %}
+            <tr>
+              <td>
+                <img
+                  src="{% static juego.imagen %}"
+                  alt="{{ juego.nombre }}"
+                  style="height: 50px; width: 50px; object-fit: cover"
+                />
+              </td>
+              <td>{{ juego.nombre }}</td>
+              <td>{{ juego.categoria }}</td>
+              <td>CLP$ {{ juego.precio|floatformat:0|intcomma }}</td>
+              <td>
+                <div class="btn-group" role="group">
+                  <a
+                    href="{% url 'juego_update' juego.id %}"
+                    class="btn btn-sm btn-outline-primary"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </a>
+                  <a
+                    href="{% url 'juego_delete' juego.id %}"
+                    class="btn btn-sm btn-outline-danger"
+                  >
+                    <i class="bi bi-trash"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="5" class="text-center">
+                No hay juegos registrados.
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

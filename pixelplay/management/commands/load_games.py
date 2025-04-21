@@ -74,14 +74,14 @@ class Command(BaseCommand):
                 'nombre': 'Pac-Man',
                 'descripcion': 'Revive el clásico arcade y escapa de los fantasmas mientras recolectas todos los puntos en el laberinto.',
                 'precio': 10000,
-                'imagen': 'imagenes/retro/pacman.jpg',
+                'imagen': 'imagenes/retro_games/pacman.jpg',
                 'categoria': 'retro'
             },
             {
                 'nombre': 'Super Mario Bros',
                 'descripcion': 'Ayuda a Mario en su aventura clásica para salvar a la Princesa Peach atravesando 8 mundos llenos de desafíos.',
                 'precio': 15000,
-                'imagen': 'imagenes/retro/super_mario_bros.jpeg',
+                'imagen': 'imagenes/retro_games/super_mario_bros.jpeg',
                 'categoria': 'retro'
             },
         ]
@@ -102,4 +102,4 @@ class Command(BaseCommand):
                 )
         
         # Mostrar el total de juegos al final
-        self.stdout.write(f"Total de juegos después de cargar: {Juego.objects.count()}") 
+        self.stdout.write(f"Total de juegos después de cargar: {Juego.objects.count()}")

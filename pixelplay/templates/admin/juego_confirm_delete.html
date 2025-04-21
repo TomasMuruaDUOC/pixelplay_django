@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% load static %} {% block title %} Eliminar Juego -
+PixelPlay {% endblock %} {% block content %}
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <h2 class="card-title mb-4">Eliminar Juego</h2>
+
+          <div class="alert alert-danger">
+            <p class="mb-0">
+              ¿Estás seguro de que deseas eliminar el juego "{{ object.nombre
+              }}"? Esta acción no se puede deshacer.
+            </p>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex align-items-center gap-3">
+              <img
+                src="{% static object.imagen %}"
+                alt="{{ object.nombre }}"
+                class="img-thumbnail"
+                style="height: 100px; width: 100px; object-fit: cover"
+              />
+              <div>
+                <h5 class="mb-1">{{ object.nombre }}</h5>
+                <p class="text-white-50 mb-0">{{ object.categoria }}</p>
+                <p class="text-primary mb-0">
+                  CLP$ {{ object.precio|floatformat:0 }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <form method="post">
+            {% csrf_token %}
+            <div class="d-flex justify-content-end gap-2">
+              <a
+                href="{% url 'admin_juegos_list' %}"
+                class="btn btn-outline-secondary"
+              >
+                Cancelar
+              </a>
+              <button type="submit" class="btn btn-danger">
+                Eliminar Juego
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

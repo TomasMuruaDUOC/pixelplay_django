@@ -90,11 +90,13 @@ Destino Gaming{% endblock %} {% block content %} {% if messages %}
               <div class="featured-game position-relative">
                 <img
                   src="{% static 'imagenes/aventura/zelda.jpg' %}"
-                  alt="Zelda"
+                  alt="Zelda: Breath of the Wild"
                   class="w-100 rounded-4"
                 />
                 <div class="featured-overlay p-4">
-                  <h2 class="display-6 text-white">The Legend of Zelda</h2>
+                  <h2 class="display-6 text-white">
+                    Zelda: Breath of the Wild
+                  </h2>
                   <p class="lead text-white-50">Una aventura épica te espera</p>
                   <button class="btn btn-primary">Ver Más</button>
                 </div>
@@ -106,7 +108,7 @@ Destino Gaming{% endblock %} {% block content %} {% if messages %}
               <div class="featured-game position-relative">
                 <img
                   src="{% static 'imagenes/retro_games/pacman.jpg' %}"
-                  alt="Pacman"
+                  alt="Pac-Man"
                   class="w-100 rounded-4"
                 />
                 <div class="featured-overlay p-4">
@@ -202,6 +204,64 @@ Destino Gaming{% endblock %} {% block content %} {% if messages %}
         </a>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Noticias Destacadas -->
+<div class="news-section mb-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="display-6 text-white">Noticias del Gaming</h2>
+    <a href="{% url 'noticias' %}" class="btn btn-outline-primary">
+      Ver todas las noticias <i class="fas fa-arrow-right ms-2"></i>
+    </a>
+  </div>
+
+  <div class="row g-4">
+    {% for noticia in noticias %}
+    <div class="col-md-6">
+      <div
+        class="card bg-dark text-white h-100 border border-light border-opacity-25 hover-effect"
+      >
+        {% if noticia.imagen|slice:":4" == 'http' %}
+        <!-- Si la imagen es una URL externa -->
+        <img
+          src="{{ noticia.imagen }}"
+          class="card-img-top"
+          alt="{{ noticia.titulo }}"
+          style="height: 200px; object-fit: cover"
+          onerror="this.onerror=null;this.src='{% static 'imagenes/accion/gta6.jpg' %}';"
+        />
+        {% else %}
+        <!-- Si la imagen es una ruta local -->
+        <img
+          src="{% static noticia.imagen %}"
+          class="card-img-top"
+          alt="{{ noticia.titulo }}"
+          style="height: 200px; object-fit: cover"
+        />
+        {% endif %}
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h5 class="card-title mb-0">{{ noticia.titulo }}</h5>
+            <span class="badge bg-primary">{{ noticia.fecha }}</span>
+          </div>
+          <p class="card-text text-white-50">{{ noticia.descripcion }}</p>
+          {% if noticia.url %}
+          <a
+            href="{{ noticia.url }}"
+            target="_blank"
+            class="btn btn-outline-primary btn-sm"
+            >Leer más</a
+          >
+          {% else %}
+          <a href="{% url 'noticias' %}" class="btn btn-outline-primary btn-sm"
+            >Leer más</a
+          >
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>
 

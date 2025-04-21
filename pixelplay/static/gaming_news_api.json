@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "totalResults": 10,
+  "articles": [
+    {
+      "source": {
+        "id": "ign",
+        "name": "IGN"
+      },
+      "author": "Redacción IGN",
+      "title": "Final Fantasy XVI anuncia su expansión para PS6",
+      "description": "Square Enix ha revelado que la próxima expansión de Final Fantasy XVI será exclusiva para la nueva PlayStation 6, aprovechando toda la potencia de la nueva consola.",
+      "url": "https://www.ign.com/articles/final-fantasy-xvi-ps6-expansion",
+      "urlToImage": "https://sm.ign.com/t/ign_es/screenshot/default/ff16-expansion_w6q2.1200.jpg",
+      "publishedAt": "2025-04-18T15:30:00Z",
+      "content": "Square Enix continúa apostando por la saga Final Fantasy con una nueva expansión que promete revolucionar la experiencia de juego."
+    },
+    {
+      "source": {
+        "id": "gamespot",
+        "name": "GameSpot"
+      },
+      "author": "Michael Higham",
+      "title": "Starfield 2 confirmado por Bethesda para 2027",
+      "description": "El estudio detrás de Starfield ha confirmado que ya está trabajando en una secuela, la cual llegará en 2027 con más planetas y una mayor interactividad.",
+      "url": "https://www.gamespot.com/articles/starfield-2-confirmed-bethesda-2027/1100-6509321/",
+      "urlToImage": "https://gamespot.com/a/uploads/screen_large/1574/15746725/4051322-starfield_2_reveal.jpg",
+      "publishedAt": "2025-04-12T14:00:00Z",
+      "content": "Todd Howard anunció en la reciente conferencia de desarrolladores que Starfield 2 será el proyecto más ambicioso de la compañía hasta la fecha."
+    },
+    {
+      "source": {
+        "id": "polygon",
+        "name": "Polygon"
+      },
+      "author": "Patricia Hernández",
+      "title": "El remake de Silent Hill 2 lidera las nominaciones a los Game Awards 2025",
+      "description": "El esperado remake de Silent Hill 2 ha recibido 11 nominaciones para los Game Awards 2025, incluyendo Juego del Año y Mejor Dirección.",
+      "url": "https://www.polygon.com/game-awards-2025/silent-hill-2-remake-nominations",
+      "urlToImage": "https://polygon.com/images/silent-hill-2-remake-awards.jpg",
+      "publishedAt": "2025-04-08T18:45:00Z",
+      "content": "El regreso de la icónica franquicia de terror ha superado todas las expectativas tanto de crítica como de ventas, consolidándose como uno de los mejores remakes de la historia."
+    },
+    {
+      "source": {
+        "id": "kotaku",
+        "name": "Kotaku"
+      },
+      "author": "Luke Plunkett",
+      "title": "Nintendo anuncia Switch Pro para finales de año",
+      "description": "Tras años de rumores, Nintendo finalmente ha revelado la versión Pro de su consola Switch, que llegará al mercado en noviembre de 2025 con retrocompatibilidad total.",
+      "url": "https://kotaku.com/nintendo-switch-pro-announced-2025-1850432592",
+      "urlToImage": "https://kotaku.com/images/switch-pro-announcement.jpg",
+      "publishedAt": "2025-04-01T12:00:00Z",
+      "content": "La nueva consola de Nintendo promete ofrecer resolución 4K en modo dock y una pantalla OLED mejorada de 8 pulgadas, manteniendo la filosofía híbrida que hizo tan popular a la Switch original."
+    },
+    {
+      "source": {
+        "id": "eurogamer",
+        "name": "Eurogamer"
+      },
+      "author": "Wesley Yin-Poole",
+      "title": "Rockstar Games revela la banda sonora de GTA 6",
+      "description": "La lista de canciones de Grand Theft Auto 6 incluye más de 500 temas distribuidos en 15 estaciones de radio, con artistas de la talla de Billie Eilish, Bad Bunny y The Weeknd.",
+      "url": "https://www.eurogamer.net/rockstar-reveals-gta-6-soundtrack-first-details",
+      "urlToImage": "https://eurogamer.net/images/gta6-soundtrack-reveal.jpg",
+      "publishedAt": "2025-03-28T09:15:00Z",
+      "content": "Con un presupuesto estimado de más de $100 millones solo en derechos musicales, la banda sonora de GTA 6 promete ser la más ambiciosa y variada de la historia de los videojuegos."
+    }
+  ]
+}

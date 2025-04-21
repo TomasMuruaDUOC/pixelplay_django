@@ -1,21 +1,30 @@
 version: "3"
+
 services:
   oracle:
-    image: gvenzl/oracle-free:latest
-    platform: linux/amd64
-    ports:
-      - "1521:1521"
+    image: gvenzl/oracle-xe:21-slim
+    container_name: pixelplay_oracle
     environment:
       - ORACLE_PASSWORD=pixelplay123
+      - ORACLE_DATABASE=FREE
       - APP_USER=pixelplay
       - APP_USER_PASSWORD=pixelplay123
+    ports:
+      - "1521:1521"
     volumes:
-      - oracle-data:/opt/oracle/oradata
+      - ./oracle_data:/opt/oracle/oradata
+      - ./estructura_pixelplay.sql:/container-entrypoint-initdb.d/01_estructura.sql
+      - ./datos_pixelplay.sql:/container-entrypoint-initdb.d/02_datos.sql
     healthcheck:
-      test: ["CMD", "healthcheck.sh"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
-volumes:
-  oracle-data:
+      test:
+        [
+          "CMD",
+          "sqlplus",
+          "-L",
+          "system/pixelplay123@//localhost:1521/FREE",
+          "@healthcheck.sql",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s

@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% load static %} {% block title %} Noticias de Gaming
+- PixelPlay {% endblock %} {% block content %}
+<div class="container py-4">
+  <h1 class="text-white text-center mb-4">Noticias del Mundo Gaming</h1>
+
+  <div class="row g-4">
+    {% for noticia in noticias %}
+    <div class="col-md-6">
+      <div
+        class="card bg-dark text-white h-100 border border-light border-opacity-25"
+      >
+        {% if noticia.imagen|slice:":4" == 'http' %}
+        <!-- Si la imagen es una URL externa -->
+        <img
+          src="{{ noticia.imagen }}"
+          class="card-img-top"
+          alt="{{ noticia.titulo }}"
+          style="height: 200px; object-fit: cover"
+          onerror="this.onerror=null;this.src='{% static 'imagenes/accion/gta6.jpg' %}';"
+        />
+        {% else %}
+        <!-- Si la imagen es una ruta local -->
+        <img
+          src="{% static noticia.imagen %}"
+          class="card-img-top"
+          alt="{{ noticia.titulo }}"
+          style="height: 200px; object-fit: cover"
+        />
+        {% endif %}
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h5 class="card-title mb-0">{{ noticia.titulo }}</h5>
+            <span class="badge bg-primary">{{ noticia.fecha }}</span>
+          </div>
+          <p class="card-text text-white-50">{{ noticia.descripcion }}</p>
+          {% if noticia.url %}
+          <a
+            href="{{ noticia.url }}"
+            target="_blank"
+            class="btn btn-outline-primary btn-sm"
+            >Leer más</a
+          >
+          {% else %}
+          <a href="{% url 'noticias' %}" class="btn btn-outline-primary btn-sm"
+            >Leer más</a
+          >
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
